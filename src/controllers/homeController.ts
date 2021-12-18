@@ -1,12 +1,19 @@
 import { Request, Response } from 'express';
+import { sequelize } from '../instances/mysql';
 
 import { Product } from '../models/Product';
 
-export const home = (req: Request, res: Response)=>{
+export const home = async (req: Request, res: Response) => {
+    try {
+        await sequelize.authenticate()
+        console.log("conexao")
+    } catch (e) {
+        console.log("error BD", e)
+    }
     let age: number = 90;
     let showOld: boolean = false;
 
-    if(age > 50) {
+    if (age > 50) {
         showOld = true;
     }
 
