@@ -2,8 +2,12 @@ import { Request, Response } from 'express';
 import { sequelize } from '../instances/mysql';
 
 import { Product } from '../models/Product';
+import { User } from '../models/user';
 
 export const home = async (req: Request, res: Response) => {
+    const users = await User.findAll();
+    console.log(users.every(user => user instanceof User)); // true
+    console.log("All users:", JSON.stringify(users, null, 2));
     try {
         await sequelize.authenticate()
         console.log("conexao")
