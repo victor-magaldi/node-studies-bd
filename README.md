@@ -2,12 +2,12 @@ Arquivos do módulo inicial de Node + Typescript, da estrutura MVC aplicada.
 
 ### Pré-requisitos globais:
 
-`yarn add -g nodemon typescript ts-node`
+`npm i -g nodemon typescript ts-node`
 
 ### Instalação
 
-`yarn add install`
+`npm install`
 
 ### Para rodar o projeto
 
-`yarn start-dev`
+`npm run start-dev`
