@@ -8,9 +8,9 @@ import { User } from "../models/user";
 export const home = async (req: Request, res: Response) => {
     try {
         // --- add data
-        // const newUser = await User.build({ name: "Sequelize build", age: 99 });
-        // newUser.save()
-        // console.log("newUser ADD ", newUser)
+        const newUser = await User.build({ name: "outro teste", age: 99 });
+        newUser.save();
+        console.log("newUser ADD ", newUser);
         // ---  remove data
         // await User.destroy({
         //     where: {
@@ -28,15 +28,8 @@ export const home = async (req: Request, res: Response) => {
         console.log(err);
     }
 
-    const users = await User.findAll({
-        where: {
-            id: {
-                [Op.eq]: 4,
-            },
-        },
-    });
-
-    console.log("All users:", JSON.stringify(users, null, 2));
+    const users = await User.findAll();
+    console.log("capture all", users);
     try {
         await sequelize.authenticate();
         console.log("conexao");
