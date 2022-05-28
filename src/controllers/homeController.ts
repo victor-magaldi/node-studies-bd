@@ -63,6 +63,16 @@ export const home = async (req: Request, res: Response) => {
     // );
 
     // console.log("userUpdate", userUpdate);
+
+    const users = await User.findAll({
+        where: {
+            age: {
+                [Op.between]: [18, 87],
+            },
+        },
+    });
+
+    console.log("usuários na faixa de idade  20 a 90", users);
     try {
         await sequelize.authenticate();
         console.log("conexao");
