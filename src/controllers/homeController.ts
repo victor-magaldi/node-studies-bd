@@ -7,10 +7,15 @@ import { User } from "../models/user";
 
 export const home = async (req: Request, res: Response) => {
     try {
-        // --- add data
-        const newUser = await User.build({ name: "outro teste", age: 99 });
-        newUser.save();
+        // --- add data with Build and save in BD
+        // const newUser = await User.build({ name: "outro teste", age: 99 });
+        // newUser.save();
+        // console.log("newUser ADD ", newUser);
+
+        // --- add data with Build and save in BD
+        const newUser = await User.create({ name: "outro teste", age: 99 });
         console.log("newUser ADD ", newUser);
+
         // ---  remove data
         // await User.destroy({
         //     where: {
