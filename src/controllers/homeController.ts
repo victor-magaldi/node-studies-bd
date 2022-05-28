@@ -11,11 +11,9 @@ export const home = async (req: Request, res: Response) => {
         // const newUser = await User.build({ name: "outro teste", age: 99 });
         // newUser.save();
         // console.log("newUser ADD ", newUser);
-
         // --- add data with Build and save in BD
-        const newUser = await User.create({ name: "outro teste", age: 99 });
-        console.log("newUser ADD ", newUser);
-
+        // const newUser = await User.create({ name: "outro teste", age: 99 });
+        // console.log("newUser ADD ", newUser);
         // ---  remove data
         // await User.destroy({
         //     where: {
@@ -33,8 +31,11 @@ export const home = async (req: Request, res: Response) => {
         console.log(err);
     }
 
-    const users = await User.findAll();
-    console.log("capture all", users);
+    // const users = await User.findAll();
+    // console.log("capture all", users);
+
+    const users = await User.findAll({ offset: 3, limit: 3 });
+    console.log("capture filtered 3-6", users);
     try {
         await sequelize.authenticate();
         console.log("conexao");
