@@ -51,6 +51,18 @@ export const home = async (req: Request, res: Response) => {
     // const userByPK = await User.findByPk(6);
     // userByPK?.update({ name: "id 6 update", age: 87 });
 
+    // const userUpdate = await User.update(
+    //     {
+    //         name: "um titulo diferente",
+    //     },
+    //     {
+    //         where: {
+    //             id: 3,
+    //         },
+    //     }
+    // );
+
+    // console.log("userUpdate", userUpdate);
     try {
         await sequelize.authenticate();
         console.log("conexao");
