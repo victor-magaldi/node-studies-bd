@@ -34,8 +34,23 @@ export const home = async (req: Request, res: Response) => {
     // const users = await User.findAll();
     // console.log("capture all", users);
 
-    const users = await User.findAll({ offset: 3, limit: 3 });
-    console.log("capture filtered 3-6", users);
+    // const users = await User.findAll({ offset: 3, limit: 3 });
+    // console.log("capture filtered 3-6", users);
+
+    // find user by primary key
+    // const userByPK = await User.findByPk(6);
+    // if (userByPK === null) {
+    //     console.log("Not found!");
+    // } else {
+    //     console.log(userByPK instanceof User); // true
+    //     // Its primary key is 123
+    //     console.log(userByPK);
+    // }
+
+    // find user by primary key and update
+    // const userByPK = await User.findByPk(6);
+    // userByPK?.update({ name: "id 6 update", age: 87 });
+
     try {
         await sequelize.authenticate();
         console.log("conexao");
